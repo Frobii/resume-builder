@@ -1,0 +1,28 @@
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.personal-details-form {
+    padding-left: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-input {
+    background-color: rgba(230, 228, 228, 0.514);
+    border: none;
+    height: 2rem;
+    width: 17rem;
+    border-radius: 0.7rem;
+}
