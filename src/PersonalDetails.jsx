@@ -1,5 +1,4 @@
 import './personal-details.css';
-import { useState } from 'react';
 
 function TextInput({ label, name, value, onChange}) {
     return (
