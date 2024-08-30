@@ -5,10 +5,10 @@ import './resume-builder.css';
 
 export default function ResumeBuilder() {
     const [formData, setFormData] = useState({
-      fullName: "",
-      email: "",
-      phoneNumber: "",
-      address: ""
+      fullName: "Jenson Jackal",
+      email: "contactjj@gmail.com",
+      phoneNumber: "0420 440 360",
+      address: "14 Jackal Street, Mt Jackal"
     })
   
     const handleInputChange = (name, value) => {
@@ -20,14 +20,18 @@ export default function ResumeBuilder() {
   
     return (
       <div className="main-container">
-        <PersonalDetails
-          fullName={formData.fullName}
-          email={formData.email}
-          phoneNumber={formData.phoneNumber}
-          address={formData.address}
-          onInputChange={handleInputChange}
-        />
-        <Resume {...formData} />
+        <section className="forms">
+            <PersonalDetails
+            fullName={formData.fullName}
+            email={formData.email}
+            phoneNumber={formData.phoneNumber}
+            address={formData.address}
+            onInputChange={handleInputChange}
+            />
+        </section>
+        <section className="resume-container">
+            <Resume {...formData} />    
+        </section>
       </div>
     )
 }

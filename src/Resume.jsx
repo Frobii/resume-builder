@@ -4,10 +4,12 @@ export default function Resume({fullName, email, phoneNumber, address}) {
     return (
         <div className="resume">
             <section className="personal-details">
-                <p className="full-name">{fullName}</p>
-                <p className="email">{email}</p>
-                <p className="phone-number">{phoneNumber}</p>
-                <p className="address">{address}</p>
+                <div className="full-name">{fullName}</div>
+                <div className="contact-info">
+                    <div className="email">{email}</div>
+                    <div className="phone-number">{phoneNumber}</div>
+                    <div className="address">{address}</div>
+                </div>
             </section>
         </div>
     )

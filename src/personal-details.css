@@ -1,6 +1,7 @@
 h1 {
-    font-size: 2rem;
-    margin-bottom: 0px;
+    font-size: 1.7rem;
+    margin: 0px;
+    width: 100%;
 }
 
 label {
@@ -11,7 +12,16 @@ label {
 }
 
 .personal-details-form {
-    padding-left: 1rem;
+    padding: 1.5rem;
+    padding-bottom: 2rem;
+    background-color: white;
+    border-radius: 0.7rem;
+    max-width: 18rem;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
 }
 
 .input-group {
@@ -20,9 +30,11 @@ label {
 }
 
 .text-input {
+    padding-left: 1rem;
+    padding-right: 1rem;
     background-color: rgba(230, 228, 228, 0.514);
     border: none;
     height: 2rem;
-    width: 17rem;
+    width: 15rem;
     border-radius: 0.7rem;
 }

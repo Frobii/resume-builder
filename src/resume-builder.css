@@ -1,0 +1,10 @@
+.main-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.resume-container {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
