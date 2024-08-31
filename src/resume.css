@@ -2,6 +2,7 @@
     background-color: white;
     width: 21cm;
     height: 29.7cm;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, .1), 0 8px 16px -8px rgba(0, 0, 0, .25);
 }
 
 .personal-details {
@@ -22,6 +23,13 @@
 
 .contact-info {
     display: flex;
-    gap: 3rem;
     justify-content: center;
+}
+
+.contact-info > *:nth-child(2n):not(:last-child) {
+    margin-right: 3rem;
+}
+
+.contact-info > *:nth-child(2n) {
+    margin-left: 0.5rem;
 }
