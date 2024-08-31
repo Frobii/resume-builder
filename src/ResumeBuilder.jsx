@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PersonalDetails from './PersonalDetails';
+import EducationDetails from './EducationDetails'
 import Resume from './Resume';
 import './resume-builder.css';
 
@@ -22,11 +23,14 @@ export default function ResumeBuilder() {
       <div className="main-container">
         <section className="forms">
             <PersonalDetails
-            fullName={formData.fullName}
-            email={formData.email}
-            phoneNumber={formData.phoneNumber}
-            address={formData.address}
-            onInputChange={handleInputChange}
+                fullName={formData.fullName}
+                email={formData.email}
+                phoneNumber={formData.phoneNumber}
+                address={formData.address}
+                onInputChange={handleInputChange}
+            />
+            <EducationDetails
+
             />
         </section>
         <section className="resume-container">
