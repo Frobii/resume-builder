@@ -3,6 +3,10 @@
     gap: 2rem;
 }
 
+.forms >* {
+    margin-bottom: 2rem;
+}
+
 .resume-container {
     display: flex;
     flex-grow: 1;
