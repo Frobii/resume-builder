@@ -4,13 +4,6 @@ h1 {
     width: 100%;
 }
 
-label {
-    font-weight: bold;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
-
 .personal-details-form {
     padding: 1.5rem;
     padding-bottom: 2rem;
@@ -22,19 +15,4 @@ label {
     flex-direction: column;
     align-items: center;
     text-align: left;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.text-input {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    background-color: rgba(230, 228, 228, 0.514);
-    border: none;
-    height: 2rem;
-    width: 15rem;
-    border-radius: 0.7rem;
 }
