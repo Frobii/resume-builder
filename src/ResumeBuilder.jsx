@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ToggleMenu from './ToggleMenu';
 import PersonalDetails from './PersonalDetails';
 import EducationDetails from './EducationDetails'
 import Resume from './Resume';
@@ -6,19 +7,68 @@ import './resume-builder.css';
 
 export default function ResumeBuilder() {
     const [formData, setFormData] = useState({
-      fullName: "Jenson Jackal",
-      email: "contactjj@gmail.com",
-      phoneNumber: "0420 440 360",
-      address: "14 Jackal Street, Mt Jackal"
+        fullName: "Jenson Jackal",
+        email: "contactjj@gmail.com",
+        phoneNumber: "0420 440 360",
+        address: "14 Jackal Street, Mt Jackal",
+        education: [
+            {
+                school: 'Jenkal High School',
+                degree: '',
+                startDate: '',
+                endDate: '',
+                location: '',
+                visible: true,
+            }
+        ] 
     })
-  
-    const handleInputChange = (name, value) => {
-      setFormData(prevData => ({
-        ...prevData,
-        [name]: value
-      }))
+
+    const [preExistingEducation, setPreExistingEducation] = useState(null);
+
+    const handleInputChange = (name, value, index = null) => {
+        setFormData(prevData => {
+            if (index !== null) {
+                const updatedEducation = [...prevData.education];
+                updatedEducation[index] = {
+                    ...updatedEducation[index],
+                    [name]: value
+                };
+                return {
+                    ...prevData,
+                    education: updatedEducation
+                };
+            } else {
+                return {
+                    ...prevData,
+                    [name]: value
+                };
+            }
+        });
+    };
+
+    const handleDelete = (deleteIndex) => {
+        setFormData(prevData => {
+            const updatedEducation = prevData.education.filter((_, index) => index != deleteIndex)
+            return {
+                ...prevData,
+                education: updatedEducation
+            }
+        })
     }
-  
+
+    const handleCancel = (currentIndex) => {
+        if (preExistingEducation) {
+          setFormData(prevData => {
+            const updatedEducation = [...prevData.education];
+            updatedEducation[currentIndex] = preExistingEducation;
+            return {
+              ...prevData,
+              education: updatedEducation
+            };
+          });
+        }
+    };
+
     return (
       <div className="main-container">
         <section className="forms">
@@ -29,9 +79,16 @@ export default function ResumeBuilder() {
                 address={formData.address}
                 onInputChange={handleInputChange}
             />
-            <EducationDetails
-
-            />
+            <ToggleMenu title="Education" >
+                <EducationDetails
+                    formData={formData}
+                    handleCancel={handleCancel}
+                    onInputChange={handleInputChange}
+                    handleDelete={handleDelete}
+                    preExistingEduca1tion={preExistingEducation}
+                    setPreExistingEducation={setPreExistingEducation}  
+                />
+            </ToggleMenu>
         </section>
         <section className="resume-container">
             <Resume {...formData} />    
