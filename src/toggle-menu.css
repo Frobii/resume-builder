@@ -1,10 +1,16 @@
+.toggle-container {
+    background-color: white;
+    border-radius: 0.7rem;
+    display: flex;
+    flex-direction: column;
+}
+
 .toggle-heading {
     padding: 1.5rem;
     height: min-content;
     display: flex;
     align-items: center;
-    background-color: white;
-    border-radius: 0.7rem;
+    background: transparent;
     position: relative; 
 }
 .title {
@@ -23,5 +29,4 @@
     padding-right: 1rem;
     position: absolute;
     right: 0rem; 
-    box-sizing: border-box;
 }
