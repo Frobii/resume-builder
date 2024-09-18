@@ -23,7 +23,7 @@ export default function Resume({fullName, email, phoneNumber, address, education
             {
                 education.length > 0 &&
                 <section className="education-details">
-                    {   (education[0] && education[0].visible) && 
+                    {   (education[0] && (education[0].visible || education[0].visible === undefined)) && 
                         <div className="education-1">
                             <div className="school">{education[0].school}</div>
                             <div className="degree">{education[0].degree}</div>
@@ -32,7 +32,7 @@ export default function Resume({fullName, email, phoneNumber, address, education
                             <div className="location">{education[0].location}</div>
                         </div>
                     }
-                    {   (education[1] && education[1].visible) && 
+                    {   (education[1] && (education[1].visible || education[1].visible === undefined)) && 
                         <div className="education-2">
                             <div className="school">{education[1].school}</div>
                             <div className="degree">{education[1].degree}</div>
@@ -41,7 +41,7 @@ export default function Resume({fullName, email, phoneNumber, address, education
                             <div className="location">{education[1].location}</div>
                         </div>
                     }
-                    {   (education[2] && education[2].visible) && 
+                    {   (education[2] && (education[2].visible || education[2].visible === undefined)) && 
                         <div className="education-3">
                             <div className="school">{education[2].school}</div>
                             <div className="degree">{education[2].degree}</div>

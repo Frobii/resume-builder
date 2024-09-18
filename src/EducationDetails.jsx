@@ -18,7 +18,7 @@ export default function EducationForm({
         setFormOpen(!formOpen);
         setCurrentIndex(index);
 //      Save a snapshot of the education object at the time of opening the form
-        if (!formOpen) {
+        if (!formOpen && formData.education[index] !== undefined) {
             const educationSnapshot = JSON.parse(JSON.stringify(formData.education[index]));
             setPreExistingEducation(educationSnapshot);
         }
@@ -27,6 +27,7 @@ export default function EducationForm({
     const deleteForm = () => {
         handleDelete(currentIndex);
         setFormOpen(false);
+        setPreExistingEducation(null)
     }
 
     const cancelForm = () => {
@@ -36,8 +37,11 @@ export default function EducationForm({
     }
 
     const hideEducationItem = (index) => {
-        console.log(index)
-        onInputChange("visible", !formData.education[index].visible, index)
+        if (formData.education[index].visible ||formData.education[index].visible === undefined) {
+            onInputChange("visible", false, index)
+        } else {
+            onInputChange("visible", true, index)
+        }
     }
 
     return(
@@ -65,11 +69,11 @@ export default function EducationForm({
                                         onClick={() => hideEducationItem(index)}
                                     >
                                         {
-                                            formData.education[index].visible &&
+                                            (formData.education[index].visible || formData.education[index].visible === undefined) &&
                                             <Icon className='visible-icon' path={mdiEyeCheck} size={1} />
                                         }
                                         {
-                                            !formData.education[index].visible &&
+                                            formData.education[index].visible === false &&
                                             <Icon className='visible-icon' path={mdiEyeRemove} size={1} />
                                         }
                                     </button>
@@ -136,7 +140,7 @@ export default function EducationForm({
                                 Cancel
                             </button>
                             <button
-                                onClick={toggleForm}
+                                onClick={toggleForm} // The form is already saved on input
                                 className='form-button save-button'
                             >
                                 Save

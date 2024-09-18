@@ -66,6 +66,8 @@ export default function ResumeBuilder() {
               education: updatedEducation
             };
           });
+        } else {
+            handleDelete(currentIndex)
         }
     };
 
