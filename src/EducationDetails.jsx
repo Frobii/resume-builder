@@ -6,23 +6,48 @@ import { mdiPlus, mdiTrashCanOutline, mdiEyeCheck, mdiEyeRemove } from '@mdi/js'
 
 export default function EducationForm({ 
     onInputChange,
-    handleDelete,
     formData,
-    handleCancel,
-    setPreExistingEducation,
+    setFormData,
 }) {
     const [formOpen, setFormOpen] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(null);
+    const [preExistingEducation, setPreExistingEducation] = useState(null);
 
     const toggleForm = (index = null) => {
         setFormOpen(!formOpen);
         setCurrentIndex(index);
-//      Save a snapshot of the education object at the time of opening the form
+//      Duplicate the education object at the time of opening the form
         if (!formOpen && formData.education[index] !== undefined) {
-            const educationSnapshot = JSON.parse(JSON.stringify(formData.education[index]));
-            setPreExistingEducation(educationSnapshot);
+            const educationDuplicate = JSON.parse(JSON.stringify(formData.education[index]));
+            setPreExistingEducation(educationDuplicate);
         }
     }
+
+    const handleDelete = (deleteIndex) => {
+      setFormData(prevData => {
+          const updatedEducation = prevData.education.filter((_, index) => index != deleteIndex)
+          return {
+              ...prevData,
+              education: updatedEducation
+          }
+      })
+    }
+
+  const handleCancel = (currentIndex) => {
+    // console.log(preExistingEducation)
+    if (preExistingEducation) {
+      setFormData(prevData => {
+        const updatedEducation = [...prevData.education];
+        updatedEducation[currentIndex] = preExistingEducation;
+        return {
+          ...prevData,
+          education: updatedEducation
+        }
+      })
+    } else {
+        handleDelete(currentIndex)
+    }
+  }
 
     const deleteForm = () => {
         handleDelete(currentIndex);

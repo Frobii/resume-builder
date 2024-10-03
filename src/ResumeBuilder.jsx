@@ -23,8 +23,6 @@ export default function ResumeBuilder() {
         ] 
     })
 
-    const [preExistingEducation, setPreExistingEducation] = useState(null);
-
     const handleInputChange = (name, value, index = null) => {
         setFormData(prevData => {
             if (index !== null) {
@@ -46,31 +44,6 @@ export default function ResumeBuilder() {
         });
     };
 
-    const handleDelete = (deleteIndex) => {
-        setFormData(prevData => {
-            const updatedEducation = prevData.education.filter((_, index) => index != deleteIndex)
-            return {
-                ...prevData,
-                education: updatedEducation
-            }
-        })
-    }
-
-    const handleCancel = (currentIndex) => {
-        if (preExistingEducation) {
-          setFormData(prevData => {
-            const updatedEducation = [...prevData.education];
-            updatedEducation[currentIndex] = preExistingEducation;
-            return {
-              ...prevData,
-              education: updatedEducation
-            };
-          });
-        } else {
-            handleDelete(currentIndex)
-        }
-    };
-
     return (
       <div className="main-container">
         <section className="forms">
@@ -84,11 +57,8 @@ export default function ResumeBuilder() {
             <ToggleMenu title="Education" >
                 <EducationDetails
                     formData={formData}
-                    handleCancel={handleCancel}
                     onInputChange={handleInputChange}
-                    handleDelete={handleDelete}
-                    preExistingEduca1tion={preExistingEducation}
-                    setPreExistingEducation={setPreExistingEducation}  
+                    setFormData={setFormData}
                 />
             </ToggleMenu>
         </section>
