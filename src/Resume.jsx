@@ -25,29 +25,23 @@ export default function Resume({fullName, email, phoneNumber, address, education
                 <section className="education-details">
                     {   (education[0] && (education[0].visible || education[0].visible === undefined)) && 
                         <div className="education-1">
-                            <div className="school">{education[0].school}</div>
+                            <div className="institution">{education[0].institution}</div>
                             <div className="degree">{education[0].degree}</div>
-                            <div className="startDate">{education[0].startDate}</div>
-                            <div className="endDate">{education[0].endDate}</div>
-                            <div className="location">{education[0].location}</div>
+                            <div className="completionDate">{education[0].completionDate}</div>
                         </div>
                     }
                     {   (education[1] && (education[1].visible || education[1].visible === undefined)) && 
                         <div className="education-2">
-                            <div className="school">{education[1].school}</div>
+                            <div className="institution">{education[1].institution}</div>
                             <div className="degree">{education[1].degree}</div>
-                            <div className="startDate">{education[1].startDate}</div>
-                            <div className="endDate">{education[1].endDate}</div>
-                            <div className="location">{education[1].location}</div>
+                            <div className="completionDate">{education[1].completionDate}</div>
                         </div>
                     }
                     {   (education[2] && (education[2].visible || education[2].visible === undefined)) && 
                         <div className="education-3">
-                            <div className="school">{education[2].school}</div>
+                            <div className="institution">{education[2].institution}</div>
                             <div className="degree">{education[2].degree}</div>
-                            <div className="startDate">{education[2].startDate}</div>
-                            <div className="endDate">{education[2].endDate}</div>
-                            <div className="location">{education[2].location}</div>
+                            <div className="completionDate">{education[2].completionDate}</div>
                         </div>
                     }
                 </section>

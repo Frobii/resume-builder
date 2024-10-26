@@ -7,17 +7,15 @@ import './resume-builder.css';
 
 export default function ResumeBuilder() {
     const [formData, setFormData] = useState({
-        fullName: "Jenson Jackal",
-        email: "contactjj@gmail.com",
-        phoneNumber: "0420 440 360",
-        address: "14 Jackal Street, Mt Jackal",
+        fullName: "Charlie Day",
+        email: "pepeSilva@mail.com",
+        phoneNumber: "(929) 556-2746",
+        address: "544 Mateo Street",
         education: [
             {
-                school: 'Jenkal High School',
-                degree: '',
-                startDate: '',
-                endDate: '',
-                location: '',
+                institution: `St. Joe's Prep School`,
+                degree: 'High School Diploma',
+                completionDate: 'Certified in 2000',
                 visible: true,
             }
         ] 

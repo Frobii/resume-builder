@@ -34,7 +34,6 @@ export default function EducationForm({
     }
 
   const handleCancel = (currentIndex) => {
-    // console.log(preExistingEducation)
     if (preExistingEducation) {
       setFormData(prevData => {
         const updatedEducation = [...prevData.education];
@@ -86,7 +85,7 @@ export default function EducationForm({
                                         <p  
                                             className="education-item"
                                         >
-                                            {item.school}
+                                            {item.institution}
                                         </p>
                                     </div>
                                     <button
@@ -122,10 +121,10 @@ export default function EducationForm({
                     formOpen &&
                     <>
                         <TextInput
-                            label="School"
-                            name="school"
-                            value={formData.education[currentIndex]?.school}
-                            onChange={(event) => onInputChange("school", event.target.value, currentIndex )}
+                            label="Institution"
+                            name="institution"
+                            value={formData.education[currentIndex]?.institution}
+                            onChange={(event) => onInputChange("institution", event.target.value, currentIndex )}
                         />
                         <TextInput
                             label="Degree"
@@ -134,22 +133,10 @@ export default function EducationForm({
                             onChange={(event) => onInputChange("degree", event.target.value, currentIndex )}
                         />
                         <TextInput
-                            label="Start Date"
-                            name="startDate"
-                            value={formData.education[currentIndex]?.startDate}
-                            onChange={(event) => onInputChange("startDate", event.target.value, currentIndex )}
-                        />
-                        <TextInput
-                            label="End Date"
-                            name="endDate"
-                            value={formData.education[currentIndex]?.endDate}
-                            onChange={(event) => onInputChange("endDate", event.target.value, currentIndex )}
-                        />
-                        <TextInput
-                            label="Location"
-                            name="location"
-                            value={formData.education[currentIndex]?.location}
-                            onChange={(event) => onInputChange("location", event.target.value, currentIndex)}
+                            label="Completion Date"
+                            name="completionDate"
+                            value={formData.education[currentIndex]?.completionDate}
+                            onChange={(event) => onInputChange("completionDate", event.target.value, currentIndex )}
                         />
                         <div className="form-buttons-container">
                             <button
