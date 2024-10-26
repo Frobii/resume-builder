@@ -23,6 +23,7 @@ export default function Resume({fullName, email, phoneNumber, address, education
             {
                 education.length > 0 &&
                 <section className="education-details">
+                    <div className ="education-header">Education & Training</div>
                     {   (education[0] && (education[0].visible || education[0].visible === undefined)) && 
                         <div className="education-1">
                             <div className="institution">{education[0].institution}</div>
