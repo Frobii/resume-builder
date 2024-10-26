@@ -1,10 +1,10 @@
-import './education-details.css';
+import './multi-form.css';
 import { useState } from 'react';
 import TextInput from './TextInput';
 import Icon from '@mdi/react';
 import { mdiPlus, mdiTrashCanOutline, mdiEyeCheck, mdiEyeRemove } from '@mdi/js';
 
-export default function EducationForm({ 
+export default function EducationForm({
     onInputChange,
     formData,
     setFormData,
@@ -70,20 +70,20 @@ export default function EducationForm({
 
     return(
         <>
-            <section className="education-details-form">
+            <section className="multi-form">
                 {
                     !formOpen &&
                     <>
-                        <div className="education-preview-container">
+                        <div className="preview-container">
                             {formData.education.map((item, index) => (
-                                <div className="education-preview-controls">
+                                <div className="preview-controls">
                                     <div 
                                         key={index}
-                                        className="education-preview" 
+                                        className="preview" 
                                         onClick={() => toggleForm(index)}
                                     >
                                         <p  
-                                            className="education-item"
+                                            className="preview-item"
                                         >
                                             {item.institution}
                                         </p>

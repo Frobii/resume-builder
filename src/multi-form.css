@@ -1,0 +1,77 @@
+.multi-form {
+    padding: 1.5rem;
+    padding-bottom: 2rem;
+    padding-top: 0rem;
+    background-color: white;
+    border-bottom-right-radius: 0.7rem;
+    border-bottom-left-radius: 0.7rem;
+}
+
+.preview-controls {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.preview {
+    gap: 1rem;
+}
+
+.visible-button {
+    background-color: white;
+}
+
+.preview-item {
+    display: flex;
+    align-items: center;
+    font-size:1.2rem;
+    margin: 10px;
+    height: 3rem;
+}
+
+.preview-item:hover {
+    cursor: pointer;
+    color: rgba(24, 71, 199, 0.877);
+}
+
+.toggle-form-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.toggle-form-button {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+    border-radius: 2rem;
+}
+
+.form-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.form-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    font-size: 0.85rem;
+}
+
+.save-button {
+    background-color: rgba(24, 71, 199, 0.877);
+    color: white;
+}
+.trash-icon {
+    color: white;
+    position: absolute;
+}
+
+.trash-button {
+    background-color: rgb(196, 44, 44);
+}
