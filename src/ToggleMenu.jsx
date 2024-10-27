@@ -5,25 +5,27 @@ import { mdiChevronDown } from '@mdi/js';
 import { mdiChevronUp } from '@mdi/js';
 import { mdiSchool } from '@mdi/js';
 import { mdiBriefcase } from '@mdi/js';
+import { mdiKeyVariant } from '@mdi/js';
 
-export default function ToggleMenu({children, title}) {
+export default function ToggleMenu({ children, title }) {
     const [toggled, setToggled] = useState(false);
 
     const toggleMenu = () => {
         setToggled(!toggled)
     }
 
-    return(
+    return (
         <>
             <div className="toggle-container">
                 <div className="toggle-heading">
                     {title === "Education" && <Icon path={mdiSchool} size={1.5} />}
                     {title === "Experience" && <Icon path={mdiBriefcase} size={1.5} />}
+                    {title === "Key Skills" && <Icon path={mdiKeyVariant} size={1.5} />}
                     <h1 className='title'>{title}</h1>
                     <button className='toggle-button' onClick={toggleMenu}>
-                        {toggled ? 
+                        {toggled ?
                             <Icon path={mdiChevronUp} size={1} /> :
-                            <Icon path={mdiChevronDown} size={1} /> 
+                            <Icon path={mdiChevronDown} size={1} />
                         }
                     </button>
                 </div>
