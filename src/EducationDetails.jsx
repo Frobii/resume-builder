@@ -5,7 +5,6 @@ import Icon from '@mdi/react';
 import { mdiPlus, mdiTrashCanOutline, mdiEyeCheck, mdiEyeRemove } from '@mdi/js';
 
 export default function EducationForm({
-    onInputChange,
     formData,
     setFormData,
 }) {
@@ -13,10 +12,27 @@ export default function EducationForm({
     const [currentIndex, setCurrentIndex] = useState(null);
     const [preExistingEducation, setPreExistingEducation] = useState(null);
 
+    const handleInputChange = (name, value, index = null) => {
+        setFormData(prevData => {
+            if (index !== null) {
+                const updatedEducation = [...prevData.education];
+                updatedEducation[index] = {
+                    ...updatedEducation[index],
+                    [name]: value
+                };
+
+                return {
+                    ...prevData,
+                    education: updatedEducation,
+                };
+            }
+        });
+    };
+
     const toggleForm = (index = null) => {
         setFormOpen(!formOpen);
         setCurrentIndex(index);
-//      Duplicate the education object at the time of opening the form
+        //  Duplicate the education object at the time of opening the form
         if (!formOpen && formData.education[index] !== undefined) {
             const educationDuplicate = JSON.parse(JSON.stringify(formData.education[index]));
             setPreExistingEducation(educationDuplicate);
@@ -24,29 +40,29 @@ export default function EducationForm({
     }
 
     const handleDelete = (deleteIndex) => {
-      setFormData(prevData => {
-          const updatedEducation = prevData.education.filter((_, index) => index != deleteIndex)
-          return {
-              ...prevData,
-              education: updatedEducation
-          }
-      })
+        setFormData(prevData => {
+            const updatedEducation = prevData.education.filter((_, index) => index != deleteIndex)
+            return {
+                ...prevData,
+                education: updatedEducation
+            }
+        })
     }
 
-  const handleCancel = (currentIndex) => {
-    if (preExistingEducation) {
-      setFormData(prevData => {
-        const updatedEducation = [...prevData.education];
-        updatedEducation[currentIndex] = preExistingEducation;
-        return {
-          ...prevData,
-          education: updatedEducation
+    const handleCancel = (currentIndex) => {
+        if (preExistingEducation) {
+            setFormData(prevData => {
+                const updatedEducation = [...prevData.education];
+                updatedEducation[currentIndex] = preExistingEducation;
+                return {
+                    ...prevData,
+                    education: updatedEducation
+                }
+            })
+        } else {
+            handleDelete(currentIndex)
         }
-      })
-    } else {
-        handleDelete(currentIndex)
     }
-  }
 
     const deleteForm = () => {
         handleDelete(currentIndex);
@@ -61,14 +77,14 @@ export default function EducationForm({
     }
 
     const hideEducationItem = (index) => {
-        if (formData.education[index].visible ||formData.education[index].visible === undefined) {
-            onInputChange("visible", false, index)
+        if (formData.education[index].visible || formData.education[index].visible === undefined) {
+            handleInputChange("visible", false, index)
         } else {
-            onInputChange("visible", true, index)
+            handleInputChange("visible", true, index)
         }
     }
 
-    return(
+    return (
         <>
             <section className="multi-form">
                 {
@@ -77,12 +93,12 @@ export default function EducationForm({
                         <div className="preview-container">
                             {formData.education.map((item, index) => (
                                 <div className="preview-controls">
-                                    <div 
+                                    <div
                                         key={index}
-                                        className="preview" 
+                                        className="preview"
                                         onClick={() => toggleForm(index)}
                                     >
-                                        <p  
+                                        <p
                                             className="preview-item"
                                         >
                                             {item.institution}
@@ -124,19 +140,19 @@ export default function EducationForm({
                             label="Institution"
                             name="institution"
                             value={formData.education[currentIndex]?.institution}
-                            onChange={(event) => onInputChange("institution", event.target.value, currentIndex )}
+                            onChange={(event) => handleInputChange("institution", event.target.value, currentIndex)}
                         />
                         <TextInput
                             label="Degree"
                             name="degree"
                             value={formData.education[currentIndex]?.degree}
-                            onChange={(event) => onInputChange("degree", event.target.value, currentIndex )}
+                            onChange={(event) => handleInputChange("degree", event.target.value, currentIndex)}
                         />
                         <TextInput
                             label="Completion Date"
                             name="completionDate"
                             value={formData.education[currentIndex]?.completionDate}
-                            onChange={(event) => onInputChange("completionDate", event.target.value, currentIndex )}
+                            onChange={(event) => handleInputChange("completionDate", event.target.value, currentIndex)}
                         />
                         <div className="form-buttons-container">
                             <button

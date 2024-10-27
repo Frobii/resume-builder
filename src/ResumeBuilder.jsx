@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ToggleMenu from './ToggleMenu';
 import PersonalDetails from './PersonalDetails';
 import EducationDetails from './EducationDetails'
+import KeySkills from './KeySkills';
 import Resume from './Resume';
 import './resume-builder.css';
 
@@ -18,51 +19,38 @@ export default function ResumeBuilder() {
                 completionDate: 'Certified in 2000',
                 visible: true,
             }
-        ] 
+        ],
+        skills: [
+            {
+                skill: `Charlie Jobs`,
+                visible: true,
+            }
+        ],
     })
 
-    const handleInputChange = (name, value, index = null) => {
-        setFormData(prevData => {
-            if (index !== null) {
-                const updatedEducation = [...prevData.education];
-                updatedEducation[index] = {
-                    ...updatedEducation[index],
-                    [name]: value
-                };
-                return {
-                    ...prevData,
-                    education: updatedEducation
-                };
-            } else {
-                return {
-                    ...prevData,
-                    [name]: value
-                };
-            }
-        });
-    };
-
     return (
-      <div className="main-container">
-        <section className="forms">
-            <PersonalDetails
-                fullName={formData.fullName}
-                email={formData.email}
-                phoneNumber={formData.phoneNumber}
-                address={formData.address}
-                onInputChange={handleInputChange}
-            />
-            <ToggleMenu title="Education" >
-                <EducationDetails
+        <div className="main-container">
+            <section className="forms">
+                <PersonalDetails
                     formData={formData}
-                    onInputChange={handleInputChange}
                     setFormData={setFormData}
                 />
-            </ToggleMenu>
-        </section>
-        <section className="resume-container">
-            <Resume {...formData} />    
-        </section>
-      </div>
+                <ToggleMenu title="Education" >
+                    <EducationDetails
+                        formData={formData}
+                        setFormData={setFormData}
+                    />
+                </ToggleMenu>
+                <ToggleMenu title="Key Skills">
+                    <KeySkills
+                        formData={formData}
+                        setFormData={setFormData}
+                    />
+                </ToggleMenu>
+            </section>
+            <section className="resume-container">
+                <Resume {...formData} />
+            </section>
+        </div>
     )
 }
