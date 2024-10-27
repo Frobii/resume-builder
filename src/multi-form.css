@@ -24,7 +24,7 @@
 .preview-item {
     display: flex;
     align-items: center;
-    font-size:1.2rem;
+    font-size: 1.2rem;
     margin: 10px;
     height: 3rem;
 }
@@ -67,6 +67,7 @@
     background-color: rgba(24, 71, 199, 0.877);
     color: white;
 }
+
 .trash-icon {
     color: white;
     position: absolute;
