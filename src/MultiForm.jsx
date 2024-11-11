@@ -12,10 +12,11 @@ export default function MultiForm({
     formDataKey,
     fields,
     previewTitle,
+    formOpen,
+    setFormOpen,
+    currentIndex,
+    setCurrentIndex
 }) {
-    const [formOpen, setFormOpen] = useState(false);
-    const [currentIndex, setCurrentIndex] = useState(null);
-
     const handleInputChange = (name, value, index = null) => {
         setFormData(prevData => {
             if (index !== null) {
