@@ -3,6 +3,7 @@ import ToggleMenu from './ToggleMenu';
 import PersonalDetails from './PersonalDetails';
 import EducationDetails from './EducationDetails'
 import KeySkills from './KeySkills';
+import Summary from './Summary';
 import Resume from './Resume';
 import './resume-builder.css';
 
@@ -26,12 +27,17 @@ export default function ResumeBuilder() {
                 visible: true,
             }
         ],
+        summary: "Wildcard, get things done—no matter what, or how gross. Loyal, tough, and always ready to jump into whatever!",
     })
 
     return (
         <div className="main-container">
             <section className="forms">
                 <PersonalDetails
+                    formData={formData}
+                    setFormData={setFormData}
+                />
+                <Summary
                     formData={formData}
                     setFormData={setFormData}
                 />
@@ -51,6 +57,6 @@ export default function ResumeBuilder() {
             <section className="resume-container">
                 <Resume {...formData} />
             </section>
-        </div>
+        </div >
     )
 }
