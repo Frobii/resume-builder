@@ -4,7 +4,7 @@ import { mdiEmail } from "@mdi/js";
 import { mdiPhone } from '@mdi/js';
 import { mdiMapMarker } from '@mdi/js';
 
-export default function Resume({ fullName, email, phoneNumber, address, education, skills }) {
+export default function Resume({ fullName, email, phoneNumber, address, education, skills, summary }) {
     return (
         <div className="resume">
             <section className="personal-details">
@@ -23,7 +23,7 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
             {
                 education.length > 0 &&
                 <section className="education-details">
-                    <div className="education-header">Education & Training</div>
+                    <div className="education-heading">Education & Training</div>
                     {(education[0] && (education[0].visible || education[0].visible === undefined)) &&
                         <div className="education-1">
                             <div className="institution">{education[0].institution}</div>
@@ -50,7 +50,7 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
             {
                 skills.length > 0 &&
                 <section className="key-skills">
-                    <div className="skills-header">Key Skills</div>
+                    <div className="skills-heading">Key Skills</div>
                     {(skills[0] && (skills[0].visible || skills[0].visible === undefined)) &&
                         <div className="skill-1">
                             {skills[0].skill}
@@ -66,6 +66,17 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
                             {skills[2].skill}
                         </div>
                     }
+                </section>
+            }
+            {
+                summary &&
+                <section className="summary">
+                    <div className="summary-header">
+                        Summary
+                    </div>
+                    <div className="summary-content">
+                        {summary}
+                    </div>
                 </section>
             }
         </div>
