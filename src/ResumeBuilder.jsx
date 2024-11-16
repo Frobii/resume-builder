@@ -4,6 +4,7 @@ import PersonalDetails from './PersonalDetails';
 import EducationDetails from './EducationDetails'
 import KeySkills from './KeySkills';
 import Summary from './Summary';
+import CareerHistory from './CareerHistory'
 import Resume from './Resume';
 import './resume-builder.css';
 
@@ -28,6 +29,17 @@ export default function ResumeBuilder() {
             }
         ],
         summary: "Wildcard, get things done—no matter what, or how gross. Loyal, tough, and always ready to jump into whatever!",
+        careerHistory: [
+            {
+                title: "Bartender",
+                company: "Paddy's Pub",
+                startYear: "2005",
+                endYear: "Present",
+                duty1: "Charlie Jobs",
+                duty2: "Drinkin",
+                duty3: "Helping Frank",
+            }
+        ]
     })
 
     return (
@@ -49,6 +61,12 @@ export default function ResumeBuilder() {
                 </ToggleMenu>
                 <ToggleMenu title="Key Skills">
                     <KeySkills
+                        formData={formData}
+                        setFormData={setFormData}
+                    />
+                </ToggleMenu>
+                <ToggleMenu title="Career History">
+                    <CareerHistory
                         formData={formData}
                         setFormData={setFormData}
                     />

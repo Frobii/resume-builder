@@ -4,7 +4,7 @@ import { mdiEmail } from "@mdi/js";
 import { mdiPhone } from '@mdi/js';
 import { mdiMapMarker } from '@mdi/js';
 
-export default function Resume({ fullName, email, phoneNumber, address, education, skills, summary }) {
+export default function Resume({ fullName, email, phoneNumber, address, education, skills, summary, careerHistory }) {
     return (
         <div className="resume">
             <section className="personal-details">
@@ -71,12 +71,53 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
             {
                 summary &&
                 <section className="summary">
-                    <div className="summary-header">
-                        Summary
+                    <div className="summary-heading">
+                        Personal Summary
                     </div>
                     <div className="summary-content">
                         {summary}
                     </div>
+                </section>
+            }
+            {
+                careerHistory.length > 0 &&
+                <section className="career-history">
+                    <div className="history-heading">
+                        Career History
+                    </div>
+                    {(careerHistory[0] && (careerHistory[0].visible || careerHistory[0].visible === undefined)) &&
+                        <div className="careerHistory-1">
+                            <div className="career-title">{careerHistory[0].title}</div>
+                            <div className="company">{careerHistory[0].company}</div>
+                            <div className="startYear">{careerHistory[0].startYear}</div>
+                            <div className="endYear">{careerHistory[0].endYear}</div>
+                            <div className="duty1">{careerHistory[0].duty1}</div>
+                            <div className="duty2">{careerHistory[0].duty2}</div>
+                            <div className="duty3">{careerHistory[0].duty3}</div>
+                        </div>
+                    }
+                    {(careerHistory[1] && (careerHistory[1].visible || careerHistory[1].visible === undefined)) &&
+                        <div className="careerHistory-2">
+                            <div className="career-title">{careerHistory[1].title}</div>
+                            <div className="company">{careerHistory[1].company}</div>
+                            <div className="startYear">{careerHistory[1].startYear}</div>
+                            <div className="endYear">{careerHistory[1].endYear}</div>
+                            <div className="duty1">{careerHistory[1].duty1}</div>
+                            <div className="duty2">{careerHistory[1].duty2}</div>
+                            <div className="duty3">{careerHistory[1].duty3}</div>
+                        </div>
+                    }
+                    {(careerHistory[2] && (careerHistory[2].visible || careerHistory[2].visible === undefined)) &&
+                        <div className="careerHistory-3">
+                            <div className="career-title">{careerHistory[2].title}</div>
+                            <div className="company">{careerHistory[2].company}</div>
+                            <div className="startYear">{careerHistory[2].startYear}</div>
+                            <div className="endYear">{careerHistory[2].endYear}</div>
+                            <div className="duty1">{careerHistory[2].duty1}</div>
+                            <div className="duty2">{careerHistory[2].duty2}</div>
+                            <div className="duty3">{careerHistory[2].duty3}</div>
+                        </div>
+                    }
                 </section>
             }
         </div>
