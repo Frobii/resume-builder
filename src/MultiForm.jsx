@@ -1,5 +1,4 @@
 import './multi-form.css';
-import { useState } from 'react';
 import TextInput from './TextInput';
 import Icon from '@mdi/react';
 import { mdiPlus, mdiTrashCanOutline, mdiEyeCheck, mdiEyeRemove } from '@mdi/js';
