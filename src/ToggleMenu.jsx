@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Icon from '@mdi/react';
 import { mdiChevronDown } from '@mdi/js';
 import { mdiChevronUp } from '@mdi/js';
+import { mdiCardAccountDetails } from '@mdi/js';
 import { mdiSchool } from '@mdi/js';
 import { mdiBriefcase } from '@mdi/js';
 import { mdiKeyVariant } from '@mdi/js';
@@ -19,6 +20,7 @@ export default function ToggleMenu({ children, title }) {
         <>
             <div className="toggle-container">
                 <div className="toggle-heading">
+                    {title === "Personal Details" && <Icon path={mdiCardAccountDetails} size={1.5} />}
                     {title === "Education" && <Icon path={mdiSchool} size={1.5} />}
                     {title === "Experience" && <Icon path={mdiBriefcase} size={1.5} />}
                     {title === "Key Skills" && <Icon path={mdiKeyVariant} size={1.5} />}

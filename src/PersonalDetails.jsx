@@ -15,7 +15,6 @@ export default function personalDetailsForm({ formData, setFormData }) {
     return (
         <>
             <section className="personal-details-form">
-                <h1>Personal Details</h1>
                 <TextInput
                     label="Full Name"
                     name="fullName"
