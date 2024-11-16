@@ -1,10 +1,4 @@
-h1 {
-    font-size: 1.7rem;
-    margin: 0px;
-    width: 100%;
-}
-
-label {
+.summaryLabel {
     margin-top: 0px;
 }
 

@@ -4,6 +4,10 @@ h1 {
     width: 100%;
 }
 
+.fullNameLabel {
+    margin-top: 0px;
+}
+
 .personal-details-form {
     padding: 1.5rem;
     padding-bottom: 2rem;

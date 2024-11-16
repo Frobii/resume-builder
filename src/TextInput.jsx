@@ -3,7 +3,7 @@ import './text-input.css';
 export default function TextInput({ label, name, value, onChange, multiLine = false }) {
     return (
         <div className="input-group">
-            <label htmlFor={name}>{label}</label>
+            <label className={name + "Label"} htmlFor={name}>{label}</label>
             {
                 multiLine ? (
                     <textarea
