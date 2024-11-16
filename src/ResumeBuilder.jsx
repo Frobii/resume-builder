@@ -51,10 +51,12 @@ export default function ResumeBuilder() {
                         setFormData={setFormData}
                     />
                 </ToggleMenu>
-                <Summary
-                    formData={formData}
-                    setFormData={setFormData}
-                />
+                <ToggleMenu title="Summary">
+                    <Summary
+                        formData={formData}
+                        setFormData={setFormData}
+                    />
+                </ToggleMenu>
                 <ToggleMenu title="Education" >
                     <EducationDetails
                         formData={formData}

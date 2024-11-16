@@ -15,7 +15,6 @@ export default function summaryForm({ formData, setFormData }) {
     return (
         <>
             <section className="summary-form">
-                <h1>Summary</h1>
                 <TextInput
                     label="Describe yourself"
                     name="summary"

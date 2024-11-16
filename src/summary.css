@@ -4,9 +4,14 @@ h1 {
     width: 100%;
 }
 
+label {
+    margin-top: 0px;
+}
+
 .summary-form {
     padding: 1.5rem;
     padding-bottom: 1.5rem;
+    padding-top: 0rem;
     background-color: white;
     border-radius: 0.7rem;
     max-width: 18rem;
