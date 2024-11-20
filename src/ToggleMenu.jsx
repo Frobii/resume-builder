@@ -9,6 +9,7 @@ import { mdiSchool } from '@mdi/js';
 import { mdiBriefcase } from '@mdi/js';
 import { mdiKeyVariant } from '@mdi/js';
 import { mdiAccountTie } from '@mdi/js';
+import { mdiStar } from '@mdi/js';
 
 export default function ToggleMenu({ children, title }) {
     const [toggled, setToggled] = useState(false);
@@ -27,6 +28,7 @@ export default function ToggleMenu({ children, title }) {
                     {title === "Experience" && <Icon path={mdiBriefcase} size={1.5} />}
                     {title === "Key Skills" && <Icon path={mdiKeyVariant} size={1.5} />}
                     {title === "Career History" && <Icon path={mdiAccountTie} size={1.5} />}
+                    {title === "References" && <Icon path={mdiStar} size={1.5} />}
                     <h1 className='title'>{title}</h1>
                     <button className='toggle-button' onClick={toggleMenu}>
                         {toggled ?

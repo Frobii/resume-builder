@@ -4,7 +4,8 @@ import PersonalDetails from './PersonalDetails';
 import EducationDetails from './EducationDetails'
 import KeySkills from './KeySkills';
 import Summary from './Summary';
-import CareerHistory from './CareerHistory'
+import CareerHistory from './CareerHistory';
+import References from './References';
 import Resume from './Resume';
 import './resume-builder.css';
 
@@ -39,7 +40,16 @@ export default function ResumeBuilder() {
                 duty2: "Drinkin",
                 duty3: "Helping Frank",
             }
-        ]
+        ],
+        references: [
+            {
+                name: "Dennis Reynolds",
+                company: "Paddy's Pub",
+                contactNumber: "(215) 555-0134",
+                email: "dennisreynolds@hotmale.com",
+                visible: true,
+            }
+        ],
     })
 
     return (
@@ -71,6 +81,12 @@ export default function ResumeBuilder() {
                 </ToggleMenu>
                 <ToggleMenu title="Career History">
                     <CareerHistory
+                        formData={formData}
+                        setFormData={setFormData}
+                    />
+                </ToggleMenu>
+                <ToggleMenu title="References">
+                    <References
                         formData={formData}
                         setFormData={setFormData}
                     />
