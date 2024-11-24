@@ -29,6 +29,19 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "prettier": "^3.3.3",
-    "vite": "^5.4.1"
-  }
+    "vite": "^5.4.11"
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frobii/resume-builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frobii/resume-builder/issues"
+  },
+  "homepage": "https://github.com/Frobii/resume-builder#readme"
 }
