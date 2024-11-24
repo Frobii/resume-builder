@@ -17,17 +17,53 @@ export default function ResumeBuilder() {
         address: "544 Mateo Street",
         education: [
             {
-                institution: `St. Joe's Prep School`,
-                degree: 'High School Diploma',
-                completionDate: 'Certified in 2000',
+                institution: "St. Joe's Prep School",
+                degree: 'High School',
+                completionDate: '...',
+                visible: true,
+            },
+            {
+                institution: "Bird Law Academy",
+                degree: 'Doctorate in Bird Law',
+                completionDate: 'Graduated in 2004',
+                visible: true,
+            },
+            {
+                institution: "Mac's Fight Training Camp",
+                degree: 'Black Belt in Swordplay',
+                completionDate: 'Trained hard in 2006',
+                visible: true,
+            },
+            {
+                institution: "The Genius Institute",
+                degree: 'Doctor of Genius',
+                completionDate: 'Graduated in 2009',
+                visible: true,
+            },
+            {
+                institution: "Frank's Business Academy",
+                degree: 'Diploma in International Studies',
+                completionDate: 'Graduated in 2012',
                 visible: true,
             }
         ],
         skills: [
             {
-                skill: `Charlie Jobs`,
+                skill: "Charlie Jobs",
                 visible: true,
-            }
+            },
+            {
+                skill: "Illeteracy",
+                visible: true,
+            },
+            {
+                skill: "Songs (Paint Enhanced)",
+                visible: true,
+            },
+            {
+                skill: "Cat Food Knowledge",
+                visible: true,
+            },
         ],
         summary: "Wildcard, get things done—no matter what, or how gross. Loyal, tough, and always ready to jump into whatever!",
         careerHistory: [
@@ -37,8 +73,17 @@ export default function ResumeBuilder() {
                 startYear: "2005",
                 endYear: "Present",
                 duty1: "Charlie Jobs",
-                duty2: "Drinkin",
+                duty2: "Drinkin'",
                 duty3: "Helping Frank",
+            },
+            {
+                title: "Mailroom Clerk",
+                company: "The Temp Agency",
+                startYear: "2008",
+                endYear: "2012",
+                duty1: "Sorting and Delivering Mail",
+                duty2: "Connecting Dots",
+                duty3: "Documenting a grand conspiracy",
             }
         ],
         references: [
@@ -48,9 +93,23 @@ export default function ResumeBuilder() {
                 contactNumber: "(215) 555-0134",
                 email: "dennisreynolds@hotmale.com",
                 visible: true,
-            }
+            },
+            {
+                name: "Bird Woman",
+                company: "Paddy's Pub",
+                contactNumber: "1-800-BIRD-LUV",
+                email: "deereynolds@squawk.com",
+                visible: true,
+            },
+            {
+                name: "Ronald McDonald",
+                company: "Paddy's Pub",
+                contactNumber: "(215) 867-5309",
+                email: "mac@fightmilk.biz",
+                visible: true,
+            },
         ],
-    })
+    });
 
     return (
         <div className="main-container">

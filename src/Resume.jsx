@@ -128,7 +128,7 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
                         <div className="reference-1">
                             <div className="reference-name">{references[0].name}</div>
                             <div className="reference-company">{references[0].company}</div>
-                            <div className="reference-phone-number">{references[0].phoneNumber}</div>
+                            <div className="reference-phone-number">{references[0].contactNumber}</div>
                             <div className="reference-email">{references[0].email}</div>
                         </div>
                     }
@@ -136,7 +136,7 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
                         <div className="reference-2">
                             <div className="reference-name">{references[1].name}</div>
                             <div className="reference-company">{references[1].company}</div>
-                            <div className="reference-phone-number">{references[1].phoneNumber}</div>
+                            <div className="reference-phone-number">{references[1].contactNumber}</div>
                             <div className="reference-email">{references[1].email}</div>
                         </div>
                     }
@@ -144,7 +144,7 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
                         <div className="reference-3">
                             <div className="reference-name">{references[2].name}</div>
                             <div className="reference-company">{references[2].company}</div>
-                            <div className="reference-phone-number">{references[2].phoneNumber}</div>
+                            <div className="reference-phone-number">{references[2].contactNumber}</div>
                             <div className="reference-email">{references[2].email}</div>
                         </div>
                     }
