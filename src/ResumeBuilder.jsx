@@ -57,11 +57,15 @@ export default function ResumeBuilder() {
                 visible: true,
             },
             {
-                skill: "Songs (Paint Enhanced)",
+                skill: "Songs",
                 visible: true,
             },
             {
-                skill: "Cat Food Knowledge",
+                skill: "Cat Food",
+                visible: true,
+            },
+            {
+                skill: "Paint",
                 visible: true,
             },
         ],
