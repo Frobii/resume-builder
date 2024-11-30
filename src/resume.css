@@ -33,3 +33,35 @@
 .contact-info > *:nth-child(2n) {
     margin-left: 0.5rem;
 }
+
+.resume-body {
+    display: flex;
+}
+
+.resume-body-left {
+    width: 35%;
+}
+
+.education-details .resume-heading  {
+    width: 60%;
+    text-align: center;
+}
+
+.resume-heading {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.key-skills, .education-details, .education-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.key-skills {
+    padding-bottom: 50px;
+}
+
+.resume-body-right {
+    width: 65%;
+}
