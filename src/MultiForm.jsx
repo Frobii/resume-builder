@@ -125,7 +125,7 @@ export default function MultiForm({
                             ))}
                         </div>
                         <div className="toggle-form-button-container">
-                            {formData[formDataKey].length < 3 && (
+                            {formData[formDataKey].length < 5 && (
                                 <button
                                     className='toggle-form-button'
                                     onClick={() => toggleForm(formData[formDataKey].length)}

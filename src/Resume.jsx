@@ -8,9 +8,9 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
     return (
         <div className="resume">
             <section className="personal-details">
-                <div className="full-name">
+                <h2 className="full-name"> 
                     {fullName}
-                </div>
+                </h2>
                 <div className="contact-info">
                     {email && <Icon path={mdiEmail} size={1} />}
                     <div className="email">{email}</div>
@@ -20,136 +20,89 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
                     <div className="address">{address}</div>
                 </div>
             </section>
-            {
-                education.length > 0 &&
-                <section className="education-details">
-                    <div className="education-heading">Education & Training</div>
-                    {(education[0] && (education[0].visible || education[0].visible === undefined)) &&
-                        <div className="education-1">
-                            <div className="institution">{education[0].institution}</div>
-                            <div className="degree">{education[0].degree}</div>
-                            <div className="completionDate">{education[0].completionDate}</div>
-                        </div>
+            <div className="resume-body">
+                <div className="resume-body-left">
+                {
+                    skills.length > 0 &&
+                    <section className="key-skills">
+                        <h2 className="resume-heading">Key Skills</h2>
+                        {skills.map((skill, index) => 
+                            (skill.visible || skill.visible === undefined) && (
+                                <div key={index} className={'skill'}>
+                                    {skill.skill}
+                                </div>
+                            )
+                        )}
+                    </section>
+                }
+                {
+                    education.length > 0 && (
+                        <section className="education-details">
+                            <h2 className="resume-heading">Education & Training</h2>
+                            {education.map((item, index) => 
+                                (item.visible || item.visible === undefined) && (
+                                    <div key={index} className="education-item">
+                                        <div className="institution">{item.institution}</div>
+                                        <div className="degree">{item.degree}</div>
+                                        <div className="completionDate">{item.completionDate}</div>
+                                    </div>
+                                )
+                            )}
+                        </section>
+                    )
+                }
+                </div>
+                <div className="resume-body-right">
+                    {
+                        summary &&
+                        <section className="summary">
+                            <h2 className="resume-heading">
+                                Personal Summary
+                            </h2>
+                            <div className="summary-content">
+                                {summary}
+                            </div>
+                        </section>
                     }
-                    {(education[1] && (education[1].visible || education[1].visible === undefined)) &&
-                        <div className="education-2">
-                            <div className="institution">{education[1].institution}</div>
-                            <div className="degree">{education[1].degree}</div>
-                            <div className="completionDate">{education[1].completionDate}</div>
-                        </div>
+                    {
+                        careerHistory.length > 0 && (
+                            <section className="career-history">
+                                <h2 className="resume-heading">Career History</h2>
+                                {careerHistory.map((item, index) => 
+                                    (item.visible || item.visible === undefined) && (
+                                        <div key={index} className={`careerHistory-${index + 1}`}>
+                                            <div className="career-title">{item.title}</div>
+                                            <div className="company">{item.company}</div>
+                                            <div className="startYear">{item.startYear}</div>
+                                            <div className="endYear">{item.endYear}</div>
+                                            <div className="duty1">{item.duty1}</div>
+                                            <div className="duty2">{item.duty2}</div>
+                                            <div className="duty3">{item.duty3}</div>
+                                        </div>
+                                    )
+                                )}
+                            </section>
+                        )
                     }
-                    {(education[2] && (education[2].visible || education[2].visible === undefined)) &&
-                        <div className="education-3">
-                            <div className="institution">{education[2].institution}</div>
-                            <div className="degree">{education[2].degree}</div>
-                            <div className="completionDate">{education[2].completionDate}</div>
-                        </div>
+                    {
+                        references.length > 0 && (
+                            <section className="reference-details">
+                                <h2 className="resume-heading">References</h2>
+                                {references.map((item, index) => 
+                                    (item.visible || item.visible === undefined) && (
+                                        <div key={index} className={`reference-${index + 1}`}>
+                                            <div className="reference-name">{item.name}</div>
+                                            <div className="reference-company">{item.company}</div>
+                                            <div className="reference-phone-number">{item.contactNumber}</div>
+                                            <div className="reference-email">{item.email}</div>
+                                        </div>
+                                    )
+                                )}
+                            </section>
+                        )
                     }
-                </section>
-            }
-            {
-                skills.length > 0 &&
-                <section className="key-skills">
-                    <div className="skills-heading">Key Skills</div>
-                    {(skills[0] && (skills[0].visible || skills[0].visible === undefined)) &&
-                        <div className="skill-1">
-                            {skills[0].skill}
-                        </div>
-                    }
-                    {(skills[1] && (skills[1].visible || skills[1].visible === undefined)) &&
-                        <div className="skill-2">
-                            {skills[1].skill}
-                        </div>
-                    }
-                    {(skills[2] && (skills[2].visible || skills[2].visible === undefined)) &&
-                        <div className="skill-3">
-                            {skills[2].skill}
-                        </div>
-                    }
-                </section>
-            }
-            {
-                summary &&
-                <section className="summary">
-                    <div className="summary-heading">
-                        Personal Summary
-                    </div>
-                    <div className="summary-content">
-                        {summary}
-                    </div>
-                </section>
-            }
-            {
-                careerHistory.length > 0 &&
-                <section className="career-history">
-                    <div className="history-heading">
-                        Career History
-                    </div>
-                    {(careerHistory[0] && (careerHistory[0].visible || careerHistory[0].visible === undefined)) &&
-                        <div className="careerHistory-1">
-                            <div className="career-title">{careerHistory[0].title}</div>
-                            <div className="company">{careerHistory[0].company}</div>
-                            <div className="startYear">{careerHistory[0].startYear}</div>
-                            <div className="endYear">{careerHistory[0].endYear}</div>
-                            <div className="duty1">{careerHistory[0].duty1}</div>
-                            <div className="duty2">{careerHistory[0].duty2}</div>
-                            <div className="duty3">{careerHistory[0].duty3}</div>
-                        </div>
-                    }
-                    {(careerHistory[1] && (careerHistory[1].visible || careerHistory[1].visible === undefined)) &&
-                        <div className="careerHistory-2">
-                            <div className="career-title">{careerHistory[1].title}</div>
-                            <div className="company">{careerHistory[1].company}</div>
-                            <div className="startYear">{careerHistory[1].startYear}</div>
-                            <div className="endYear">{careerHistory[1].endYear}</div>
-                            <div className="duty1">{careerHistory[1].duty1}</div>
-                            <div className="duty2">{careerHistory[1].duty2}</div>
-                            <div className="duty3">{careerHistory[1].duty3}</div>
-                        </div>
-                    }
-                    {(careerHistory[2] && (careerHistory[2].visible || careerHistory[2].visible === undefined)) &&
-                        <div className="careerHistory-3">
-                            <div className="career-title">{careerHistory[2].title}</div>
-                            <div className="company">{careerHistory[2].company}</div>
-                            <div className="startYear">{careerHistory[2].startYear}</div>
-                            <div className="endYear">{careerHistory[2].endYear}</div>
-                            <div className="duty1">{careerHistory[2].duty1}</div>
-                            <div className="duty2">{careerHistory[2].duty2}</div>
-                            <div className="duty3">{careerHistory[2].duty3}</div>
-                        </div>
-                    }
-                </section>
-            }
-            {
-                references.length > 0 &&
-                <section className="reference-details">
-                    <div className="reference-heading">References</div>
-                    {(references[0] && (references[0].visible || references[0].visible === undefined)) &&
-                        <div className="reference-1">
-                            <div className="reference-name">{references[0].name}</div>
-                            <div className="reference-company">{references[0].company}</div>
-                            <div className="reference-phone-number">{references[0].contactNumber}</div>
-                            <div className="reference-email">{references[0].email}</div>
-                        </div>
-                    }
-                    {(references[1] && (references[1].visible || references[1].visible === undefined)) &&
-                        <div className="reference-2">
-                            <div className="reference-name">{references[1].name}</div>
-                            <div className="reference-company">{references[1].company}</div>
-                            <div className="reference-phone-number">{references[1].contactNumber}</div>
-                            <div className="reference-email">{references[1].email}</div>
-                        </div>
-                    }
-                    {(references[2] && (references[2].visible || references[2].visible === undefined)) &&
-                        <div className="reference-3">
-                            <div className="reference-name">{references[2].name}</div>
-                            <div className="reference-company">{references[2].company}</div>
-                            <div className="reference-phone-number">{references[2].contactNumber}</div>
-                            <div className="reference-email">{references[2].email}</div>
-                        </div>
-                    }
-                </section>
-            }
+                </div>
+            </div>
         </div>
     )
 }
