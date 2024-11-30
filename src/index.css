@@ -17,6 +17,10 @@
   width: 100%;
 }
 
+h2 {
+  margin: 0px;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
