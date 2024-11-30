@@ -29,7 +29,7 @@ export default function ToggleMenu({ children, title }) {
                     {title === "Key Skills" && <Icon path={mdiKeyVariant} size={1.5} />}
                     {title === "Career History" && <Icon path={mdiAccountTie} size={1.5} />}
                     {title === "References" && <Icon path={mdiStar} size={1.5} />}
-                    <h1 className='title'>{title}</h1>
+                    <h2 className='title'>{title}</h2>
                     <button className='toggle-button' onClick={toggleMenu}>
                         {toggled ?
                             <Icon path={mdiChevronUp} size={1} /> :
