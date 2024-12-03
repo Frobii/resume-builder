@@ -6,7 +6,7 @@
 }
 
 .personal-details {
-    background-color: rgba(24, 71, 199, 0.877);
+    background-color: #1847c7e0;
     height: 15%;
     gap: 1rem;
     color: white;
@@ -26,11 +26,11 @@
     justify-content: center;
 }
 
-.contact-info > *:nth-child(2n):not(:last-child) {
+.contact-info>*:nth-child(2n):not(:last-child) {
     margin-right: 3rem;
 }
 
-.contact-info > *:nth-child(2n) {
+.contact-info>*:nth-child(2n) {
     margin-left: 0.5rem;
 }
 
@@ -42,24 +42,48 @@
     width: 35%;
 }
 
-.education-details .resume-heading  {
+.education-details .resume-heading {
     width: 60%;
     text-align: center;
 }
 
 .resume-heading {
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
 }
 
-.key-skills, .education-details, .education-item {
+.resume-body-left>* h2 {
+    border-bottom: 2px #1847c7e0 solid;
+    border-image: linear-gradient(to left, #ffffff 0%, #1847c7e0 50%, #ffffff 100%) 1;
+}
+
+.key-skills,
+.education-details,
+.education-item {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .key-skills {
-    padding-bottom: 50px;
+    padding-bottom: 25px;
+}
+
+.key-skills :not(:first-child):not(:last-child) {
+    padding-bottom: 8px;
+}
+
+.education-item {
+    padding-bottom: 25px;
+}
+
+.institution {
+    font-weight: 700;
+}
+
+.completionDate {
+    color: grey;
 }
 
 .resume-body-right {

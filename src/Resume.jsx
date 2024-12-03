@@ -8,7 +8,7 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
     return (
         <div className="resume">
             <section className="personal-details">
-                <h2 className="full-name"> 
+                <h2 className="full-name">
                     {fullName}
                 </h2>
                 <div className="contact-info">
@@ -22,35 +22,35 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
             </section>
             <div className="resume-body">
                 <div className="resume-body-left">
-                {
-                    skills.length > 0 &&
-                    <section className="key-skills">
-                        <h2 className="resume-heading">Key Skills</h2>
-                        {skills.map((skill, index) => 
-                            (skill.visible || skill.visible === undefined) && (
-                                <div key={index} className={'skill'}>
-                                    {skill.skill}
-                                </div>
-                            )
-                        )}
-                    </section>
-                }
-                {
-                    education.length > 0 && (
-                        <section className="education-details">
-                            <h2 className="resume-heading">Education & Training</h2>
-                            {education.map((item, index) => 
-                                (item.visible || item.visible === undefined) && (
-                                    <div key={index} className="education-item">
-                                        <div className="institution">{item.institution}</div>
-                                        <div className="degree">{item.degree}</div>
-                                        <div className="completionDate">{item.completionDate}</div>
+                    {
+                        skills.length > 0 &&
+                        <section className="key-skills">
+                            <h2 className="resume-heading">Key Skills</h2>
+                            {skills.map((skill, index) =>
+                                (skill.visible || skill.visible === undefined) && (
+                                    <div key={index} className={'skill'}>
+                                        {skill.skill}
                                     </div>
                                 )
                             )}
                         </section>
-                    )
-                }
+                    }
+                    {
+                        education.length > 0 && (
+                            <section className="education-details">
+                                <h2 className="resume-heading">Education & Training</h2>
+                                {education.map((item, index) =>
+                                    (item.visible || item.visible === undefined) && (
+                                        <div key={index} className="education-item">
+                                            <div className="institution">{item.institution}</div>
+                                            <div className="degree">{item.degree}</div>
+                                            <div className="completionDate">{item.completionDate}</div>
+                                        </div>
+                                    )
+                                )}
+                            </section>
+                        )
+                    }
                 </div>
                 <div className="resume-body-right">
                     {
@@ -68,7 +68,7 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
                         careerHistory.length > 0 && (
                             <section className="career-history">
                                 <h2 className="resume-heading">Career History</h2>
-                                {careerHistory.map((item, index) => 
+                                {careerHistory.map((item, index) =>
                                     (item.visible || item.visible === undefined) && (
                                         <div key={index} className={`careerHistory-${index + 1}`}>
                                             <div className="career-title">{item.title}</div>
@@ -88,7 +88,7 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
                         references.length > 0 && (
                             <section className="reference-details">
                                 <h2 className="resume-heading">References</h2>
-                                {references.map((item, index) => 
+                                {references.map((item, index) =>
                                     (item.visible || item.visible === undefined) && (
                                         <div key={index} className={`reference-${index + 1}`}>
                                             <div className="reference-name">{item.name}</div>
