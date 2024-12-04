@@ -19,7 +19,7 @@ export default function ResumeBuilder() {
             {
                 institution: "St. Joe's Prep School",
                 degree: 'High School',
-                completionDate: '...',
+                completionDate: 'Graduated in ...',
                 visible: true,
             },
             {
@@ -69,7 +69,8 @@ export default function ResumeBuilder() {
                 visible: true,
             },
         ],
-        summary: "Wildcard, get things done—no matter what, or how gross. Loyal, tough, and always ready to jump into whatever!",
+        summary: "Wildcard, get things done—no matter what, or how gross.\n" +
+            "Loyal, tough, and always ready to jump into whatever!",
         careerHistory: [
             {
                 title: "Bartender",

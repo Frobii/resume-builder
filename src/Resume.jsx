@@ -60,7 +60,9 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
                                 Personal Summary
                             </h2>
                             <div className="summary-content">
-                                {summary}
+                                {summary.split('\n').map((line, index) => ( // Split the summary upon line breaks
+                                    <p key={index}>{line}</p>
+                                ))}
                             </div>
                         </section>
                     }
@@ -71,13 +73,21 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
                                 {careerHistory.map((item, index) =>
                                     (item.visible || item.visible === undefined) && (
                                         <div key={index} className={`careerHistory-${index + 1}`}>
-                                            <div className="career-title">{item.title}</div>
-                                            <div className="company">{item.company}</div>
-                                            <div className="startYear">{item.startYear}</div>
-                                            <div className="endYear">{item.endYear}</div>
-                                            <div className="duty1">{item.duty1}</div>
-                                            <div className="duty2">{item.duty2}</div>
-                                            <div className="duty3">{item.duty3}</div>
+                                            <div className="title-and-company">
+                                                <div className="career-title">{item.title}</div>
+                                                <div className="company">&nbsp;~&nbsp;{item.company}</div>
+                                                &nbsp;
+                                                (
+                                                <div className="startYear">{item.startYear}</div>
+                                                &nbsp;-&nbsp;
+                                                <div className="endYear">{item.endYear}</div>
+                                                )
+                                            </div>
+                                            <ul className="duties">
+                                                <li>{item.duty1}</li>
+                                                <li>{item.duty2}</li>
+                                                <li>{item.duty3}</li>
+                                            </ul>
                                         </div>
                                     )
                                 )}
@@ -91,10 +101,16 @@ export default function Resume({ fullName, email, phoneNumber, address, educatio
                                 {references.map((item, index) =>
                                     (item.visible || item.visible === undefined) && (
                                         <div key={index} className={`reference-${index + 1}`}>
-                                            <div className="reference-name">{item.name}</div>
-                                            <div className="reference-company">{item.company}</div>
-                                            <div className="reference-phone-number">{item.contactNumber}</div>
-                                            <div className="reference-email">{item.email}</div>
+                                            <div className="reference-name-and-company">
+                                                <div className="reference-name">{item.name}</div>
+                                                &nbsp;-&nbsp;
+                                                <div className="reference-company">{item.company}</div>
+                                            </div>
+                                            <ul className="reference-contact-details">
+                                                <li className="reference-phone-number">
+                                                    Contact number:&nbsp;{item.contactNumber}</li>
+                                                <li className="reference-email">{item.email}</li>
+                                            </ul>
                                         </div>
                                     )
                                 )}

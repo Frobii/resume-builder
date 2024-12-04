@@ -39,7 +39,12 @@
 }
 
 .resume-body-left {
-    width: 35%;
+    width: 40%;
+}
+
+.resume-body-right {
+    margin-left: 10px;
+    width: 65%;
 }
 
 .education-details .resume-heading {
@@ -67,18 +72,20 @@
 }
 
 .key-skills {
-    padding-bottom: 25px;
+    padding-bottom: 10px;
 }
 
 .key-skills :not(:first-child):not(:last-child) {
-    padding-bottom: 8px;
+    padding-bottom: 10px;
 }
 
 .education-item {
     padding-bottom: 25px;
 }
 
-.institution {
+.institution,
+.career-title,
+.reference-name {
     font-weight: 700;
 }
 
@@ -86,6 +93,31 @@
     color: grey;
 }
 
-.resume-body-right {
-    width: 65%;
+.resume-body-right>* h2 {
+    border-bottom: 2px #1847c7e0 solid;
+    border-image: linear-gradient(to right, #1847c7e0 0%, #ffffff 45%) 1;
+}
+
+.summary-content {
+    width: 90%;
+}
+
+.company {
+    font-style: italic;
+}
+
+.title-and-company,
+.time-at-company {
+    display: flex;
+}
+
+.duties,
+.reference-contact-details {
+    padding-left: 20px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.reference-name-and-company {
+    display: flex;
 }
