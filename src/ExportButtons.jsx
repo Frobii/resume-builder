@@ -1,13 +1,12 @@
 import html2canvas from 'html2canvas';
 import Icon from '@mdi/react';
-import { mdiDownload } from '@mdi/js';
 import { mdiPrinter } from '@mdi/js';
 
 export default function ExportButtons() {
-    
+
     const printResume = () => {
         const resume = document.querySelector('.resume');
-        
+
         html2canvas(resume, { useCORS: true }).then(canvas => {
             const imgData = canvas.toDataURL('image/png');
             const printWindow = window.open('', '', 'height=600,width=800');
@@ -75,12 +74,12 @@ export default function ExportButtons() {
 
     return (
         <>
-            <div 
+            <button 
                 className="print-button"
                 onClick={() => printResume()}
             >
                 <Icon path={mdiPrinter} size={1.5} />
-            </div>
+            </button>
         </>
     )
 }
