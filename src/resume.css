@@ -5,6 +5,23 @@
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, .1), 0 8px 16px -8px rgba(0, 0, 0, .25);
 }
 
+.resume-body>* h2 {
+    border-bottom: 2px #1847c7e0 solid;
+}
+.education-details .resume-heading {
+    width: 8rem;
+    text-align: center;
+}
+.summary .resume-heading {
+    width: 14.3rem;
+}
+.career-history .resume-heading {
+    width: 11rem;
+}
+.reference-details .resume-heading {
+    width: 8.5rem;
+}
+
 .personal-details {
     background-color: #1847c7e0;
     height: 15%;
@@ -40,27 +57,18 @@
 
 .resume-body-left {
     width: 40%;
+    margin-left: 10px;
 }
 
 .resume-body-right {
+    width: 55%;
     margin-left: 10px;
-    width: 65%;
-}
-
-.education-details .resume-heading {
-    width: 60%;
-    text-align: center;
 }
 
 .resume-heading {
     margin-top: 30px;
     margin-bottom: 20px;
     padding-bottom: 5px;
-}
-
-.resume-body-left>* h2 {
-    border-bottom: 2px #1847c7e0 solid;
-    border-image: linear-gradient(to left, #ffffff 0%, #1847c7e0 50%, #ffffff 100%) 1;
 }
 
 .key-skills,
@@ -91,11 +99,6 @@
 
 .completionDate {
     color: grey;
-}
-
-.resume-body-right>* h2 {
-    border-bottom: 2px #1847c7e0 solid;
-    border-image: linear-gradient(to right, #1847c7e0 0%, #ffffff 45%) 1;
 }
 
 .summary-content {

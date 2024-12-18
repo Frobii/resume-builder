@@ -6,6 +6,7 @@ import KeySkills from './KeySkills';
 import Summary from './Summary';
 import CareerHistory from './CareerHistory';
 import References from './References';
+import ExportButtons from './ExportButtons';
 import Resume from './Resume';
 import './resume-builder.css';
 
@@ -29,7 +30,7 @@ export default function ResumeBuilder() {
                 visible: true,
             },
             {
-                institution: "Mac's Fight Training Camp",
+                institution: "Mac's Fight Camp",
                 degree: 'Black Belt in Swordplay',
                 completionDate: 'Trained hard in 2006',
                 visible: true,
@@ -42,7 +43,7 @@ export default function ResumeBuilder() {
             },
             {
                 institution: "Frank's Business Academy",
-                degree: 'Diploma in International Studies',
+                degree: 'International Studies',
                 completionDate: 'Graduated in 2012',
                 visible: true,
             }
@@ -155,6 +156,7 @@ export default function ResumeBuilder() {
                         setFormData={setFormData}
                     />
                 </ToggleMenu>
+                <ExportButtons></ExportButtons>
             </section>
             <section className="resume-container">
                 <Resume {...formData} />
