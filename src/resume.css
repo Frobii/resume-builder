@@ -7,6 +7,7 @@
 
 .resume-body>* h2 {
     border-bottom: 2px #1847c7e0 solid;
+    padding: 0px;
 }
 .education-details .resume-heading {
     width: 8rem;
