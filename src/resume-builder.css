@@ -5,7 +5,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.03rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     user-select: none;
 }

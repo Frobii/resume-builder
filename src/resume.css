@@ -4,25 +4,31 @@
     height: 29.7cm;
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, .1), 0 8px 16px -8px rgba(0, 0, 0, .25);
 }
+
 .resume-body>* ul {
     margin-top: 0px;
 }
+
 .resume-body>* h2 {
-    border-bottom: 2px #1847c7e0 solid;
+    border-bottom: 3px #1847c7e0 solid;
     padding: 0px;
 }
+
 .education-details .resume-heading {
     width: 8rem;
     text-align: center;
 }
+
 .summary .resume-heading {
-    width: 14.3rem;
+    width: 13.3rem;
 }
+
 .career-history .resume-heading {
-    width: 11rem;
+    width: 10.5rem;
 }
+
 .reference-details .resume-heading {
-    width: 8.5rem;
+    width: 8.2rem;
 }
 
 .personal-details {
