@@ -120,6 +120,10 @@ export default function ResumeBuilder() {
     return (
         <div className="main-container">
             <section className="forms">
+                <div className="heading-container">
+                    <h1>Resume Builder</h1>
+                    <ExportButtons></ExportButtons>
+                </div>
                 <ToggleMenu title="Personal Details">
                     <PersonalDetails
                         formData={formData}
@@ -156,7 +160,6 @@ export default function ResumeBuilder() {
                         setFormData={setFormData}
                     />
                 </ToggleMenu>
-                <ExportButtons></ExportButtons>
             </section>
             <section className="resume-container">
                 <Resume {...formData} />
