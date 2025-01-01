@@ -6,14 +6,20 @@ export default function ExportButtons() {
 
     const printResume = () => {
         const resume = document.querySelector('.resume');
+        const clonedResume = resume.cloneNode(true);
 
-        html2canvas(resume, { useCORS: true }).then(canvas => {
+        clonedResume.style.boxShadow = 'none';
+        clonedResume.style.position = 'absolute';
+        clonedResume.style.left = '-99999px';
+        document.body.appendChild(clonedResume);
+
+        html2canvas(clonedResume, { useCORS: true }).then(canvas => {
             const imgData = canvas.toDataURL('image/png');
             const printWindow = window.open('', '', 'height=600,width=800');
-            
+
             const imgElement = new Image();
             imgElement.src = imgData;
-    
+
             // Wait for the image to load before printing
             imgElement.onload = () => {
                 printWindow.document.write('<html><head><title>Print Resume</title>');
@@ -39,6 +45,7 @@ export default function ExportButtons() {
 
                             /* Remove any extra page margins or padding */
                             @page {
+                                size: A4;
                                 margin: 0;
                             }
 
@@ -59,7 +66,7 @@ export default function ExportButtons() {
                 printWindow.document.write(`<img src="${imgData}" style="max-width: 100%; height: auto;" />`);
                 printWindow.document.write('</body></html>');
                 printWindow.document.close();
-                
+
                 // Trigger the print dialog after the content is ready
                 setTimeout(() => {
                     printWindow.print();
@@ -74,7 +81,7 @@ export default function ExportButtons() {
 
     return (
         <>
-            <button 
+            <button
                 className="print-button"
                 onClick={() => printResume()}
             >
