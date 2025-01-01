@@ -1,36 +1,90 @@
 import './toggle-menu.css'
 import { useState } from 'react';
 import Icon from '@mdi/react';
-import { mdiChevronDown } from '@mdi/js';
-import { mdiChevronUp } from '@mdi/js';
-import { mdiCardAccountDetails } from '@mdi/js';
-import { mdiInformationSlabBox } from '@mdi/js';
-import { mdiSchool } from '@mdi/js';
-import { mdiBriefcase } from '@mdi/js';
-import { mdiKeyVariant } from '@mdi/js';
-import { mdiAccountTie } from '@mdi/js';
-import { mdiStar } from '@mdi/js';
+import {
+    mdiCardAccountDetails,
+    mdiInformationSlabBox,
+    mdiSchool,
+    mdiBriefcase,
+    mdiKeyVariant,
+    mdiAccountTie,
+    mdiStar,
+    mdiChevronUp,
+    mdiChevronDown
+} from '@mdi/js';
 
 export default function ToggleMenu({ children, title }) {
     const [toggled, setToggled] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
     const toggleMenu = () => {
         setToggled(!toggled)
     }
 
+    const highlightIcon = () => {
+        setIsHovered(true);
+    };
+
+    const removeHighlight = () => {
+        setIsHovered(false);
+    };
+
     return (
         <>
             <div className="toggle-container">
-                <div className="toggle-heading">
-                    {title === "Personal Details" && <Icon path={mdiCardAccountDetails} size={1.5} />}
-                    {title === "Summary" && <Icon path={mdiInformationSlabBox} size={1.5} />}
-                    {title === "Education" && <Icon path={mdiSchool} size={1.5} />}
-                    {title === "Experience" && <Icon path={mdiBriefcase} size={1.5} />}
-                    {title === "Key Skills" && <Icon path={mdiKeyVariant} size={1.5} />}
-                    {title === "Career History" && <Icon path={mdiAccountTie} size={1.5} />}
-                    {title === "References" && <Icon path={mdiStar} size={1.5} />}
+                <div
+                    className="toggle-heading"
+                    onMouseEnter={highlightIcon}
+                    onMouseLeave={removeHighlight}
+                >
+                    {title === "Personal Details" &&
+                        <Icon
+                            path={mdiCardAccountDetails} size={1.5}
+                            style={{ color: isHovered ? '#1847c7e0' : '#213547' }}
+                        />
+                    }
+                    {title === "Summary" &&
+                        <Icon
+                            path={mdiInformationSlabBox} size={1.5}
+                            style={{ color: isHovered ? '#1847c7e0' : '#213547' }}
+                        />
+                    }
+                    {title === "Education" &&
+                        <Icon
+                            path={mdiSchool} size={1.5}
+                            style={{ color: isHovered ? '#1847c7e0' : '#213547' }}
+                        />
+                    }
+                    {title === "Experience" &&
+                        <Icon
+                            path={mdiBriefcase} size={1.5}
+                            style={{ color: isHovered ? '#1847c7e0' : '#213547' }}
+                        />
+                    }
+                    {title === "Key Skills" &&
+                        <Icon
+                            path={mdiKeyVariant} size={1.5}
+                            style={{ color: isHovered ? '#1847c7e0' : '#213547' }}
+                        />
+                    }
+                    {title === "Career History" &&
+                        <Icon
+                            path={mdiAccountTie} size={1.5}
+                            style={{ color: isHovered ? '#1847c7e0' : '#213547' }}
+                        />
+                    }
+                    {title === "References" &&
+                        <Icon
+                            path={mdiStar} size={1.5}
+                            style={{ color: isHovered ? '#1847c7e0' : '#213547' }}
+                        />
+                    }
                     <h2 className='title'>{title}</h2>
-                    <button className='toggle-button' onClick={toggleMenu}>
+                    <button
+                        className='toggle-button'
+                        onClick={toggleMenu}
+                        onMouseEnter={highlightIcon}
+                    >
                         {toggled ?
                             <Icon path={mdiChevronUp} size={1} /> :
                             <Icon path={mdiChevronDown} size={1} />
@@ -40,7 +94,7 @@ export default function ToggleMenu({ children, title }) {
                 {
                     toggled && children
                 }
-            </div>
+            </div >
         </>
     )
 }
