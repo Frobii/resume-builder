@@ -13,9 +13,12 @@ h1 {
 .heading-container {
     display: flex;
     gap: 20px;
+    width: 21rem;
 }
 
 .main-container {
+    margin-top: 2rem;
+    margin-left: 2rem;
     display: flex;
     gap: 2rem;
 }
@@ -28,4 +31,22 @@ h1 {
     display: flex;
     flex-grow: 1;
     justify-content: center;
+}
+
+@media (max-width: 1180px) {
+    .main-container {
+        flex-direction: column;
+        width: 100vw;
+        margin-left: 0;
+    }
+
+    .forms {
+        align-self: center;
+    }
+
+    .resume {
+        transform: translateY(-35rem);
+        position: absolute;
+        scale: 50%;
+    }
 }

@@ -11,6 +11,7 @@ export default function ExportButtons() {
         clonedResume.style.boxShadow = 'none';
         clonedResume.style.position = 'absolute';
         clonedResume.style.left = '-99999px';
+        clonedResume.style.scale = '100%';
         document.body.appendChild(clonedResume);
 
         html2canvas(clonedResume, { useCORS: true }).then(canvas => {
