@@ -84,6 +84,9 @@ export default function ExportButtons() {
             <button
                 className="print-button"
                 onClick={() => printResume()}
+                style={{
+                    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+                }}
             >
                 <Icon path={mdiPrinter} size={1.5} />
             </button>

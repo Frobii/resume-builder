@@ -1,9 +1,26 @@
+h1 {
+    background-color: #ffffff;
+    border-radius: 0.7rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.05rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    user-select: none;
+}
+
+.heading-container {
+    display: flex;
+    gap: 20px;
+}
+
 .main-container {
     display: flex;
     gap: 2rem;
 }
 
-.forms >* {
+.forms>* {
     margin-bottom: 2rem;
 }
 
